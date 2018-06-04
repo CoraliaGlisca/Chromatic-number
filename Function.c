@@ -9,16 +9,20 @@ extern int adjacency_matrix[100][100];
 extern int color[100];
 
 void NextValue( int k_node){
-	  int j;
+	  int iterative_2;
 
-    while(1)
-    {
+    while(1){
 
         color[k_node]=(color[k_node]+1)%(chromatic_no+1);
+		
+		   if(color[k_node]==0) {
 
-        for(j=1; j<=no_nodes; j++)
-        {
-                  if(adjacency_matrix[k_node][j]==1&&color[k_node]==color[j])
+            return;
+           }
+
+        for(iterative_2=1; iterative_2<=no_nodes; iterative_2++){
+		
+                  if(adjacency_matrix[k_node][iterative_2]==1&&color[k_node]==color[iterative_2])
                            break;
         }
 
@@ -26,34 +30,34 @@ void NextValue( int k_node){
 
 }
 
-void GraphColoring(int k_node)  //generates a combination of colors and prints it
-{
+void GraphColoring(int k_node){  //generates a combination of colors and prints it
 
-    int i;
+    int iterative_1;
 
-    while(1)
-    {
+    while(1){
 
-        nextValue(k_node);
+           nextValue(k_node);
+		
+		   if(color[k_node]==0){}
 
-        if(k_node==no_nodes)
-        {
+                return;
+           }
 
-            counter_for_solution=1;
+          if(k_node==no_nodes) {
 
-            for(i=1; i<=no_nodes; i++)
-            {
+                  counter_for_solution=1;
 
-                printf("%d ", color[i]);
-            }
+                 for(iterative_1=1; iterative_1<=no_nodes; iterative_1++) {
+
+                             printf("%d ", color[iterative_1]);
+                 }
 
 
-            printf("\n");
+                  printf("\n");
 
-        }
-        else
+        } else{
 
-            GraphColoring(k_node+1);
+              GraphColoring(k_node+1);
 
 
     }

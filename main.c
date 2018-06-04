@@ -9,7 +9,7 @@ int adjacency_matrix[100][100];
 int color[100]; //memoreaza culoarea nodului respectiv
 
 void  main(){
-        int i, j;
+        int iterative_1, iterative_2;
 
         int existence_of_edge;
 
@@ -20,22 +20,22 @@ void  main(){
 
       printf("\n===Enter 1 if the nodes are adjacent, otherwise enter 0===\n");
 
-      for(i=1; i<=no_nodes; i++){
+      for(iterative_1=1; iterative_1<=no_nodes; iterative_1++){
 
-                color[i]=0; //we've not colored it yet
+                color[iterative_1]=0; //we've not colored it yet
 
-                 for(j=1; j<=no_nodes; j++) {
+                 for(iterative_2=1; iterative_2<=no_nodes; iterative_2++) {
 
-                            if(i==j)
+                            if(iterative_1==iterative_2)
 
-                                    adjacency_matrix[i][j]=0;
+                                    adjacency_matrix[iterative_1][iterative_2]=0;
 
                              else{
 
-                                    printf("%d -> %d: " , i, j);
+                                    printf("%d -> %d: " , iterative_1, iterative_2);
                                     scanf("%d", &existence_of_edge);
 
-                                   adjacency_matrix[i][j]=adjacency_matrix[j][i]=existence_of_edge;
+                                   adjacency_matrix[iterative_1][iterative_2]=adjacency_matrix[iterative_2][iterative_1]=existence_of_edge;
 
                             }
 
@@ -46,12 +46,12 @@ void  main(){
 
        printf("\nEnter Adjacency Matrix:\n");
 
-       for(i=1;i<=no_nodes;i++){
+       for(iterative_1=1;iterative_1<=no_nodes;iterative_1++){
 
-                for(j=1;j<=no_nodes;j++){
+                for(iterative_2=1;iterative_2<=no_nodes;iterative_2++){
 
-                          printf("a[%d][%d]= ", i,j);
-                          scanf("%d", &adjacency_matrix[i][j]);
+                          printf("a[%d][%d]= ", iterative_1,iterative_2);
+                          scanf("%d", &adjacency_matrix[iterative_1][iterative_2]);
                  }
          }
 

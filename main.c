@@ -9,11 +9,12 @@ int counter_for_solution;
 int **adjacency_matrix;
 int color[100]; //memoreaza culoarea nodului respectiv
 
-int main(){
-  int iterator_1, iterator_2;
+int main()
+{
+    int iterator_1, iterator_2;
 
-  printf("Enter the number of nodes : ");
-  scanf("%d", &no_nodes);
+    printf("Enter the number of nodes : ");
+    scanf("%d", &no_nodes);
 
     //allocating space in the memory for the adjacency matrix of the graph
     adjacency_matrix = malloc(no_nodes * sizeof(int*));
@@ -25,9 +26,9 @@ int main(){
     adjacency_matrix = GenerateMatrix(&adjacency_matrix, no_nodes);
 
     //printing the adjacency matrix
-   for (iterator_1 = 0; iterator_1 < no_nodes; iterator_1++)
+    for (iterator_1 = 0; iterator_1 < no_nodes; iterator_1++)
     {
-            printf("\n");
+        printf("\n");
 
         for (iterator_2 = 0; iterator_2 < no_nodes; iterator_2++)
         {
@@ -39,16 +40,18 @@ int main(){
 
     printf("\nPossible Solutions are\n");
 
-    for(chromatic_no=1;chromatic_no<=no_nodes;chromatic_no++){
+    for(chromatic_no=1; chromatic_no<=no_nodes; chromatic_no++)
+    {
 
-            if(counter_for_solution==1){
+        if(counter_for_solution==1)
+        {
 
-                     break;
-            }
+            break;
+        }
 
-            GraphColoring(1);
+        GraphColoring(1);
 
-     }
+    }
 
 
     printf("\nThe chromatic number is %d", chromatic_no-1);

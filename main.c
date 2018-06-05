@@ -4,12 +4,12 @@
 
 int chromatic_no;
 int  no_nodes;
-int counter_for_solution=0;
+int counter_for_solution;
 int adjacency_matrix[100][100];
 int color[100]; //memoreaza culoarea nodului respectiv
 
 void  main(){
-        int iterative_1, iterative_2;
+        int iterator_1, iterator_2;
 
         int existence_of_edge;
 
@@ -20,22 +20,22 @@ void  main(){
 
       printf("\n===Enter 1 if the nodes are adjacent, otherwise enter 0===\n");
 
-      for(iterative_1=1; iterative_1<=no_nodes; iterative_1++){
+      for(iterator_1=1; iterator_1<=no_nodes; iterator_1++){
 
-                color[iterative_1]=0; //we've not colored it yet
+                color[iterator_1]=0; //we've not colored it yet
 
-                 for(iterative_2=1; iterative_2<=no_nodes; iterative_2++) {
+                 for(iterator_2=1; iterator_2<=no_nodes; iterator_2++) {
 
-                            if(iterative_1==iterative_2)
+                            if(iterator_1==iterator_2)
 
-                                    adjacency_matrix[iterative_1][iterative_2]=0;
+                                    adjacency_matrix[iterator_1][iterator_2]=0;
 
                              else{
 
-                                    printf("%d -> %d: " , iterative_1, iterative_2);
+                                    printf("%d -> %d: " , iterator_1, iterator_2);
                                     scanf("%d", &existence_of_edge);
 
-                                   adjacency_matrix[iterative_1][iterative_2]=adjacency_matrix[iterative_2][iterative_1]=existence_of_edge;
+                                   adjacency_matrix[iterator_1][iterator_2]=adjacency_matrix[iterator_2][iterator_1]=existence_of_edge;
 
                             }
 
@@ -46,12 +46,12 @@ void  main(){
 
        printf("\nEnter Adjacency Matrix:\n");
 
-       for(iterative_1=1;iterative_1<=no_nodes;iterative_1++){
+       for(iterator_1=1;iterator_1<=no_nodes;iterator_1++){
 
-                for(iterative_2=1;iterative_2<=no_nodes;iterative_2++){
+                for(iterator_2=1;iterator_2<=no_nodes;iterator_2++){
 
-                          printf("a[%d][%d]= ", iterative_1,iterative_2);
-                          scanf("%d", &adjacency_matrix[iterative_1][iterative_2]);
+                          printf("a[%d][%d]= ", iterator_1,iterator_2);
+                          scanf("%d", &adjacency_matrix[iterator_1][iterator_2]);
                  }
          }
 

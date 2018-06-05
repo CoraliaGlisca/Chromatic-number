@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<conio.h>
-#include"function.h"
+#include"Function.h"
 
 extern int chromatic_no;
 extern int no_nodes;
@@ -9,7 +9,7 @@ extern int adjacency_matrix[100][100];
 extern int color[100];
 
 void NextValue( int k_node){
-	  int iterative_2;
+	  int iterator_2;
 
     while(1){
 
@@ -20,10 +20,15 @@ void NextValue( int k_node){
             return;
            }
 
-        for(iterative_2=1; iterative_2<=no_nodes; iterative_2++){
+        for(iterator_2=1; iterator_2<=no_nodes; iterator_2++){
 		
-                  if(adjacency_matrix[k_node][iterative_2]==1&&color[k_node]==color[iterative_2])
+                  if(adjacency_matrix[k_node][iterator_2]==1&&color[k_node]==color[iterator_2])
                            break;
+        }
+		
+		 if(iterator_2==(no_nodes+1)) {
+
+                 return;
         }
 
     }
@@ -32,13 +37,13 @@ void NextValue( int k_node){
 
 void GraphColoring(int k_node){  //generates a combination of colors and prints it
 
-    int iterative_1;
+    int iterator_1;
 
     while(1){
 
-           nextValue(k_node);
+           NextValue(k_node);
 		
-		   if(color[k_node]==0){}
+		   if(color[k_node]==0){
 
                 return;
            }
@@ -47,9 +52,9 @@ void GraphColoring(int k_node){  //generates a combination of colors and prints 
 
                   counter_for_solution=1;
 
-                 for(iterative_1=1; iterative_1<=no_nodes; iterative_1++) {
+                 for(iterator_1=1; iterator_1<=no_nodes; iterator_1++) {
 
-                             printf("%d ", color[iterative_1]);
+                             printf("%d ", color[iterator_1]);
                  }
 
 
@@ -59,7 +64,6 @@ void GraphColoring(int k_node){  //generates a combination of colors and prints 
 
               GraphColoring(k_node+1);
 
-
-    }
-
+           }
+	}
 }

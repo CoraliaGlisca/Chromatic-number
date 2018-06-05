@@ -5,15 +5,25 @@
 	<stdio.h>
 	<stdlib.h>
 
-1528161030 source:c:\users\cora\documents\github\chromatic-number\function.c
+1528229846 source:c:\users\cora\documents\github\chromatic-number\function.c
 	<stdio.h>
 	<conio.h>
 	"Function.h"
+	"Generator.h"
 
 1528157296 c:\users\cora\documents\github\chromatic-number\function.h
 
-1528160676 source:c:\users\cora\documents\github\chromatic-number\main.c
+1528213765 source:c:\users\cora\documents\github\chromatic-number\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Function.h"
+
+1528229410 c:\users\cora\documents\github\chromatic-number\generator.h
+
+1528229810 source:c:\users\cora\documents\github\chromatic-number\generator.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"Function.h"
+	"Generator.h"
 

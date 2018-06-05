@@ -1,11 +1,12 @@
 #include<stdio.h>
 #include<conio.h>
 #include"Function.h"
+#include"Generator.h"
 
 extern int chromatic_no;
 extern int no_nodes;
 extern int counter_for_solution;
-extern int adjacency_matrix[100][100];
+extern int **adjacency_matrix;
 extern int color[100];
 
 void NextValue(int k_node){
